@@ -5,37 +5,30 @@ const props = defineProps({
     type: String,
     required: true
   }
-
 })
 </script>
 
-<template>
-    
-  
-</template>
+<template></template>
 
 <style scoped>
 /* align hr center and width 60% */
 
+.box-gallery {
+  animation: arrive 1s ease-in-out;
+  animation-fill-mode: forwards;
+  width: 60%;
+  min-height: 100px;
+  margin: 5px auto;
+  background-color: #29336b48;
+  padding: 10px;
+  border-radius: 5px;
 
-.box-gallery{
-    animation: arrive 1s ease-in-out;
-    animation-fill-mode: forwards;
-    width: 60%;
-    min-height: 100px;
-    margin: 5px auto;
-    background-color: #29336b48;
-    padding: 10px;
-    border-radius: 5px;
-    
-    /* vertical align center */
-    display: flex;
-    flex-direction: column;
-    /* make box shadow bottom right 2px 0.5 #000 */
-    box-shadow: 2px 0.5px #000;
-
+  /* vertical align center */
+  display: flex;
+  flex-direction: column;
+  /* make box shadow bottom right 2px 0.5 #000 */
+  box-shadow: 2px 0.5px #000;
 }
-
 
 @keyframes arrive {
   0% {
@@ -47,5 +40,4 @@ const props = defineProps({
     transform: translateY(0);
   }
 }
-
 </style>

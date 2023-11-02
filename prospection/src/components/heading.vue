@@ -13,14 +13,13 @@ const props = defineProps({
   <header>
     <h1>{{ title }}</h1>
   </header>
-  
 </template>
 
 <style scoped>
 header {
   background-color: #f0f0f0;
   padding: 1rem;
-  
+
   width: 100%;
   height: 300px;
   text-align: center;
@@ -29,7 +28,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 h1 {
   /* arriving effect */
@@ -40,9 +38,7 @@ h1 {
   /* bold */
   font-weight: 700;
   font-size: 3rem;
-
 }
-
 
 @keyframes arrive {
   0% {
