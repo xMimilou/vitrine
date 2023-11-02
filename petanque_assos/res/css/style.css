@@ -14,11 +14,11 @@
     font-size: 5em;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: appear 1s ease-in-out;
+    animation: appear-y 1s ease-in-out;
 }
 
 
-@keyframes appear{
+@keyframes appear-y{
     0%{
         opacity: 0; /* Commencez avec une opacité de 0 */
         transform: translateY(-50px); /* Déplacez le titre de 50 pixels vers le bas */
@@ -29,6 +29,20 @@
     }
 }
 
+
+
+@keyframes appear-x{
+    0%{
+        opacity: 0; /* Commencez avec une opacité de 0 */
+        /*transform: translateX(-50px); /* Déplacez le titre de 50 pixels vers le bas */
+        scale: 0.5;
+    }
+    100%{
+        opacity: 1; /* Faites apparaître le titre au survol */
+        /*transform: translateX(0); /* Replacez le titre à sa position originale */
+        scale: 1;
+    }
+}
 
 #annonces {
 
@@ -112,4 +126,18 @@ body html > * {
 }
 ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(255, 255, 255, 0.4); 
+}
+
+/* make arriving css style transition */
+.galeries-card{
+    transition: all 0.3s ease-in-out;
+    animation: appear-x 1s ease-in-out;
+
+}
+
+.galeries-card:hover{
+    /*zoom in*/
+    
+    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
