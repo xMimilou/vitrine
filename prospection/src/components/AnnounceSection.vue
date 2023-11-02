@@ -5,46 +5,43 @@ const props = defineProps({
     type: String,
     required: true
   },
-    description: {
-        type: String,
-        required: true
-}
+  description: {
+    type: String,
+    required: true
+  }
 })
 </script>
 
 <template>
-    <div class="box-annonce">
-        <h3>{{ title }}</h3>
-        <p>{{ description }}</p>
-    </div>
-  
+  <div class="box-annonce">
+    <h3>{{ title }}</h3>
+    <p>{{ description }}</p>
+  </div>
 </template>
 
 <style scoped>
 /* align hr center and width 60% */
 
+.box-annonce {
+  animation: arrive 1s ease-in-out;
+  animation-fill-mode: forwards;
+  width: 60%;
+  min-height: 100px;
+  margin: 5px auto;
+  background-color: #29336b48;
+  padding: 10px;
+  border-radius: 5px;
 
-.box-annonce{
-    animation: arrive 1s ease-in-out;
-    animation-fill-mode: forwards;
-    width: 60%;
-    min-height: 100px;
-    margin: 5px auto;
-    background-color: #29336b48;
-    padding: 10px;
-    border-radius: 5px;
-    
-    /* vertical align center */
-    display: flex;
-    flex-direction: column;
-    /* make box shadow bottom right 2px 0.5 #000 */
-    box-shadow: 2px 0.5px #000;
-
+  /* vertical align center */
+  display: flex;
+  flex-direction: column;
+  /* make box shadow bottom right 2px 0.5 #000 */
+  box-shadow: 2px 0.5px #000;
 }
 
-.box-annonce:hover{
-    background-color: #29336b;
-    color: white;
+.box-annonce:hover {
+  background-color: #29336b;
+  color: white;
 }
 
 @keyframes arrive {
@@ -57,5 +54,4 @@ const props = defineProps({
     transform: translateY(0);
   }
 }
-
 </style>

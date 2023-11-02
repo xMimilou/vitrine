@@ -10,10 +10,22 @@ import Gallery from '../components/Gallery.vue'
   <Navbar></Navbar>
   <div class="white">
     <h2>Annonces</h2>
-    <AnnounceSection title="Match de mardi" description="Rendez-vous mardi prochain pour un match de pétanque"></AnnounceSection>
-    <AnnounceSection title="Match de mardi" description="Rendez-vous mardi prochain pour un match de pétanque"></AnnounceSection>
-    <AnnounceSection title="Match de mardi" description="Rendez-vous mardi prochain pour un match de pétanque"></AnnounceSection>
-    <AnnounceSection title="Match de mardi" description="Rendez-vous mardi prochain pour un match de pétanque"></AnnounceSection>
+    <AnnounceSection
+      title="Match de mardi"
+      description="Rendez-vous mardi prochain pour un match de pétanque"
+    ></AnnounceSection>
+    <AnnounceSection
+      title="Match de mardi"
+      description="Rendez-vous mardi prochain pour un match de pétanque"
+    ></AnnounceSection>
+    <AnnounceSection
+      title="Match de mardi"
+      description="Rendez-vous mardi prochain pour un match de pétanque"
+    ></AnnounceSection>
+    <AnnounceSection
+      title="Match de mardi"
+      description="Rendez-vous mardi prochain pour un match de pétanque"
+    ></AnnounceSection>
     <p class="subtitle"><a href="/Annonce">voir plus </a></p>
   </div>
   <div class="blue">
@@ -30,7 +42,7 @@ import Gallery from '../components/Gallery.vue'
       <Gallery galleryname="Match de mardi"></Gallery>
       <Gallery galleryname="Match de mardi"></Gallery>
     </div>
-    <p class="subtitle" style="color:white"><a href="/gallery">voir plus >>></a></p>
+    <p class="subtitle" style="color: white"><a href="/gallery">voir plus >>></a></p>
   </div>
 </template>
 
@@ -70,7 +82,7 @@ h2 {
   font-size: 1rem;
 }
 
-.gallery-container{
+.gallery-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

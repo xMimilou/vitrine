@@ -1,25 +1,22 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-    <nav>
-        <ul>
-        <li>
-            <RouterLink to="/" exact>Home</RouterLink>
-        </li>
-        <li>
-            <RouterLink to="/about">About</RouterLink>
-        </li>
-        <li>
-            <RouterLink to="/Annonce">Annonce</RouterLink>
-        </li>
-        <li>
-            <RouterLink to="/Gallery">Gallery</RouterLink>
-        </li>
-        </ul>
-    </nav>
-  
+  <nav>
+    <ul>
+      <li>
+        <RouterLink to="/" exact>Home</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/about">About</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/Annonce">Annonce</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/Gallery">Gallery</RouterLink>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <style scoped>
@@ -27,7 +24,7 @@
 nav {
   background-color: #29336bbb;
   padding: 1rem;
-  
+
   width: 100%;
   height: 50px;
   text-align: center;
@@ -36,8 +33,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:white;
-
+  color: white;
 }
 ul {
   list-style: none;
@@ -61,7 +57,4 @@ li a.active {
   color: #fff;
   text-decoration: underline;
 }
-
-
-
 </style>
