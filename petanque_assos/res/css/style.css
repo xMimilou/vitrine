@@ -141,3 +141,33 @@ body html > * {
     transform: scale(1.03);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+.link-none{
+    text-decoration: none;
+    height: 100%;
+}
+
+.bg-img-card{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.img-name-text{
+    font-size: 10px;
+    /*the element is an label ith height 20px, put the text in the center of the line*/
+    line-height: 20px;
+    /*the element is an label ith height 20px, put the text in the center of the line*/
+    vertical-align: baseline;
+    padding: auto;
+    margin-left: 3px;
+
+}
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -382px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -71px;
+}
