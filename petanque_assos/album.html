@@ -63,18 +63,19 @@
         <div class="container">
             <h2 class=" text-center mb-4">Album name</h2>
             <div class="container">
-                <div class="row py-2">
+                <!-- if liked place : <i class="bi bi-heart-fill"></i>-->
+                <!-- <div class="row py-2">
                     <div class="col-md-12">
                         <div class="btn-group">
-                            <button type="button" data-toggle="modal" data-target="#exampleModal"
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#commentModal"
                                 class="btn btn-sm btn-outline-success"><i class="bi bi-chat-left-text"></i> (<span
                                     id="comment">0</span>)</button>
-                            <!-- if liked place : <i class="bi bi-heart-fill"></i>-->
+                            
                             <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-heart"></i>
                                 (<span id="like">0</span>)</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col-md-6 col-lg-4 col-sm-12 ">
@@ -154,18 +155,26 @@
     </div>
     </div>
 
+
+    <!-- <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div> -->
+
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">x</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
-                    <!-- Carousel markup: https://getbootstrap.com/docs/4.4/components/carousel/ -->
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                           <div class="carousel-item active">
@@ -191,7 +200,7 @@
 
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
                 </div>
             </div>
         </div>
