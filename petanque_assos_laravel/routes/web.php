@@ -14,17 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+    return view('shared/home');
+})->name('home');
 
-Route::get("/galeries", function () {
-    return view("galeries");
-});
+Route::get('/galeries', function () {
+    return view('shared/galeries');
+})->name('galeries');
 
-Route::get("/agenda", function () {
-    return view("agenda");
-});
+Route::get('/agenda', function () {
+    return view('shared/agenda');
+})->name('agenda');
 
 Route::get("/galeries/album/{id}", function ($id) {
-    return view("album", ["id" => $id]);
+    return view("shared/album", ["id" => $id]);
+});
+
+Route::get("/sponsors", function () {
+    return view("shared/sponsors");
 });
