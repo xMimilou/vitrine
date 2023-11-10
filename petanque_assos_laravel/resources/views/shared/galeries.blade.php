@@ -35,14 +35,7 @@
             </form>
 
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-4">
-                <x-galeries-card galerieName="1" image="img_1.jpg" location="La Baule" date="07/11/2023"/>
-
-                <x-galeries-card galerieName="1" image="img_2.jpg" location="La Baule" date="07/11/2023"/>
-
-                <x-galeries-card galerieName="1" image="img_3.jpg" location="La Baule" date="07/11/2023"/>
-
-                <x-galeries-card galerieName="1" image="img_1.jpg" location="La Baule" date="07/11/2023"/>
-                <x-galeries-card galerieName="1" image="img_1.jpg" location="La Baule" date="07/11/2023"/>
+                <x-folder-list :limit="false"/>
             </div>
             <div class="row align-items-stretch g-4 py-2">
                 <div class="container-fluid">

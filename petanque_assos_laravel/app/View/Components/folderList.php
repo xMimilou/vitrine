@@ -3,21 +3,26 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use finfo;
 
 class FolderList extends Component
 {
     public $folders;
 
-    public function __construct()
+    public function __construct($limit = false)
     {
         $directory = storage_path('public/album');
 
-        
         // Récupérer la liste des dossiers dans le dossier $directory
         $directories = Storage::directories('public/album');
-        
+
+        // Trier les dossiers par date de dernière modification (du plus récent au plus ancien)
+        usort($directories, function($a, $b) {
+            return Storage::lastModified($b) - Storage::lastModified($a);
+        });
+
+        if ($limit) {
+            $directories = array_slice($directories, 0, 3);
+        }
 
         $this->folders = collect($directories)->map(function ($folder) use ($directory) {
             // Construire le chemin complet vers le fichier _info.data
@@ -43,5 +48,4 @@ class FolderList extends Component
         return view('components.folderList');
     }
 }
-
 ?>
