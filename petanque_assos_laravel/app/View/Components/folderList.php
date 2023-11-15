@@ -45,7 +45,7 @@ class FolderList extends Component
 
     public function render()
     {
-        return view('components.folderList');
+        return view('components.folderList', ['folders' => $this->folders]);
     }
+
 }
-?>

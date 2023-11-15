@@ -42,7 +42,7 @@
     <div class="container">
       <h2 class=" text-center mb-4">Galeries</h2>
       <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <x-folder-list :limit="true"/>
+        <x-folderList :limit="true"/>
       </div>
       <div class="container-fluid">
         <div class="row">

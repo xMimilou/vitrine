@@ -35,7 +35,7 @@
             </form>
 
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-4">
-                <x-folder-list :limit="false"/>
+                <x-folderList :limit="false"/>
             </div>
             <div class="row align-items-stretch g-4 py-2">
                 <div class="container-fluid">
