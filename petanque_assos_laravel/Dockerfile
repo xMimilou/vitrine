@@ -6,5 +6,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /petanque_assos_laravel
 COPY . /petanque_assos_laravel
 RUN composer install --verbose
-CMD php artisan serve --host=0.0.0.0 --port=8181
-EXPOSE 8181
+RUN composer dump-autoload
+CMD php artisan key:generate && php artisan serve --host=0.0.0.0 --port=8080
+EXPOSE 8080
