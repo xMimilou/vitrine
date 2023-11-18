@@ -25,9 +25,15 @@ USER laravel
 
 # Run Composer install
 RUN composer install --verbose
+<<<<<<< HEAD
 
 # Command to run the Laravel application
 CMD php artisan serve --host=0.0.0.0 --port=8000
 
 # Expose port 8000
 EXPOSE 8000
+=======
+RUN composer dump-autoload
+CMD php artisan key:generate && php artisan serve --host=0.0.0.0 --port=8080
+EXPOSE 8080
+>>>>>>> 52621f999b029e45184511c4baa43d581ea4f26a
