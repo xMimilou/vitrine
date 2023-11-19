@@ -22,21 +22,23 @@
 
     <div class="album py-5 px-4 bg-body-tertiary">
         <div class="container">
-            <h2 class=" text-center mb-4">Galeries</h2>
+            <h2 class="text-center mb-4">Galeries</h2>
             <form>
                 <div class="row py-2">
                     <div class="col-md-11 col-sm-10">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     </div>
-                    <div class="col-md-1 col-sm-1 mx-auto d-flex justify-content-center ">
+                    <div class="col-md-1 col-sm-1 mx-auto d-flex justify-content-center">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </div>
                 </div>
             </form>
-
+    
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-4">
-                <x-folderList :limit="false"/>
+                <!-- Include the folder list component -->
+                <x-folderList :page="$page"/>
             </div>
+            <!-- Pagination Links -->
             <div class="row align-items-stretch g-4 py-2">
                 <div class="container-fluid">
                     <div class="row">
@@ -46,15 +48,18 @@
                                 <nav aria-label=" example">
                                     <ul class="pagination">
                                         <li class="page-item">
-                                            <a class="page-link text-muted" href="#" aria-label="Previous">
+                                            {{-- if page is 1, no previous page otherwise go on next --}}
+                                            <a class="page-link text-muted" href="{{ url('/galeries/'. $page+1) }}" aria-label="Previous">
                                                 <span aria-hidden="true">«</span>
                                             </a>
                                         </li>
-                                        <li class="page-item"><a class="page-link text-muted" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link text-muted" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link text-muted" href="#">3</a></li>
+                                        {{-- for page who display galerie from 0 to nb of folder in public/album  / 9--}}
+                                        
+                                            <li class="page-item"><a class="page-link text-muted" href="{{ url('/galeries/'.$page) }}">{{ $page }}</a></li>
+                                        
                                         <li class="page-item">
-                                            <a class="page-link text-muted" href="#" aria-label="Next">
+                                            {{-- if page is last page, no next page otherwise go on next --}}
+                                            <a class="page-link text-muted" href="{{ url('/galeries/'. $page+1) }}" aria-label="Next">
                                                 <span aria-hidden="true">»</span>
                                             </a>
                                         </li>
@@ -65,11 +70,11 @@
                     </div>
                 </div>
             </div>
-
-
+            
+            
         </div>
     </div>
-    </div>
+    
 
     <div class="container-fluid  shadow " id="footer">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">

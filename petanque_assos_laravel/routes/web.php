@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('shared/home');
 })->name('home');
 
-Route::get('/galeries', function () {
-    return view('shared/galeries');
+Route::get('/galeries/{page}', function ($page) {
+    return view('shared/galeries', ['page' => $page]);
 })->name('galeries');
 
 Route::get('/agenda', function () {
