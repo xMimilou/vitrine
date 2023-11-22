@@ -50,7 +50,7 @@
             <!-- center element -->
             <div class="mx-auto d-flex justify-content-center">
               <!--onclick redirect to gallery page-->
-              <button onclick="window.location.href='/galeries'" type="button" class="btn btn-secondary">Ouvrir la galerie app 1</button>
+              <button onclick="window.location.href='/galeries/0'" type="button" class="btn btn-secondary">Ouvrir la galerie</button>
             </div>
           </div>
         </div>

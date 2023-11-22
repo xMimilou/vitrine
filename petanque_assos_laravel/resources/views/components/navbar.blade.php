@@ -11,7 +11,7 @@
             <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="{{ url('/') }}">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('galeries') ? 'active' : '' }}" href="{{ url('/galeries') }}">Galeries</a>
+            <a class="nav-link {{ request()->is('galeries') ? 'active' : '' }}" href="{{ url('/galeries/0') }}">Galeries</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ request()->is('agenda') ? 'active' : '' }}" href="{{ url('/agenda') }}">Agenda</a>
