@@ -36,41 +36,10 @@
     
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-4">
                 <!-- Include the folder list component -->
-                <x-folderList :page="$page"/>
-            </div>
-            <!-- Pagination Links -->
-            <div class="row align-items-stretch g-4 py-2">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <!-- center element -->
-                            <div class="pagination mx-auto d-flex justify-content-center">
-                                <nav aria-label=" example">
-                                    <ul class="pagination">
-                                        <li class="page-item">
-                                            {{-- if page is 1, no previous page otherwise go on next --}}
-                                            <a class="page-link text-muted" href="{{ url('/galeries/'. $page+1) }}" aria-label="Previous">
-                                                <span aria-hidden="true">«</span>
-                                            </a>
-                                        </li>
-                                        {{-- for page who display galerie from 0 to nb of folder in public/album  / 9--}}
-                                        
-                                            <li class="page-item"><a class="page-link text-muted" href="{{ url('/galeries/'.$page) }}">{{ $page }}</a></li>
-                                        
-                                        <li class="page-item">
-                                            {{-- if page is last page, no next page otherwise go on next --}}
-                                            <a class="page-link text-muted" href="{{ url('/galeries/'. $page+1) }}" aria-label="Next">
-                                                <span aria-hidden="true">»</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                            </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+                <x-folderList :page="$page" :perPage="9"/>
             </div>
             
+            <x-pagination :perPage="9" :page="$page"/>
             
         </div>
     </div>
