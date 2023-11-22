@@ -36,10 +36,10 @@
     
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-4">
                 <!-- Include the folder list component -->
-                <x-folderList :page="$page" :perPage="2"/>
+                <x-folderList :page="$page" :perPage="9"/>
             </div>
             
-            <x-pagination :perPage="2" :page="$page"/>
+            <x-pagination :perPage="9" :page="$page"/>
             
         </div>
     </div>
