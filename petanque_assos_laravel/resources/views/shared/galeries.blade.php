@@ -22,7 +22,7 @@
 
     <div class="album py-5 px-4 bg-body-tertiary">
         <div class="container">
-            <h2 class="text-center mb-4">Galeries</h2>
+            <h2 class="text-center mb-4" id="galeries">Galeries</h2>
             <form>
                 <div class="row py-2">
                     <div class="col-md-11 col-sm-10">
