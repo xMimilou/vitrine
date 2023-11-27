@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow p-3 mb-5 bg-body">
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-body">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ url('/') }}">Pétanque Escoublac</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"

@@ -32,3 +32,16 @@ Route::get("/galeries/album/{id}", function ($id) {
 Route::get("/sponsors", function () {
     return view("shared/sponsors");
 });
+
+/* administration route*/
+Route::get("/admin", function () {
+    return view("admin/index");
+});
+
+Route::get("/admin/connection", function () {
+    return view("admin/connection");
+});
+
+Route::post('/admin/annonces', 'App\Http\Controllers\AdminController@updateAnnonces')->name('admin.annonces');
+
+
