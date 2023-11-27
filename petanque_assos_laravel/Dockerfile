@@ -1,30 +1,52 @@
+# Use the official PHP 8.1 image with FPM
 FROM php:8.1-fpm
 
 # Create a non-root user
 RUN useradd -ms /bin/bash laravel
 
 # Install necessary packages
-RUN apt-get update -y && apt-get install -y openssl zip unzip git libpq-dev libonig-dev
+RUN apt-get update -y && \
+    apt-get install -y openssl zip unzip git libpq-dev libonig-dev
 
 # Install PHP extensions
-RUN docker-php-ext-configure pdo_mysql
-RUN docker-php-ext-install pdo pdo_mysql mbstring
+RUN docker-php-ext-configure pdo_mysql && \
+    docker-php-ext-install pdo pdo_mysql mbstring
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- \
+    --install-dir=/usr/local/bin --filename=composer
 
 # Set working directory
 WORKDIR /petanque_assos_laravel
 
-# Copy the application files and change ownership
+# Copy the application files
 COPY . /petanque_assos_laravel
+
+# Change ownership to non-root user
 RUN chown -R laravel:laravel /petanque_assos_laravel
 
 # Switch to non-root user
 USER laravel
 
-# Run Composer install
-RUN composer install --verbose
+# Run Composer install and update
+RUN composer install --verbose && \
+    composer update --with-all-dependencies --ignore-platform-req=ext-fileinfo
+
+# Copy .env.example and rename it as .env
+# Note: The permissions are set to 600 for security reasons
+COPY --chown=laravel:laravel .env.example .env
+RUN chmod 600 .env
+
+# Generate Laravel application key
+RUN php artisan key:generate 
+
+# Change permissions of the storage and bootstrap/cache directories
+RUN chmod -R 775 /petanque_assos_laravel/storage /petanque_assos_laravel/bootstrap/cache
+
+# Run additional Laravel specific commands to ensure proper setup
+RUN php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache
 
 # Command to run the Laravel application
 CMD php artisan serve --host=0.0.0.0 --port=8000
