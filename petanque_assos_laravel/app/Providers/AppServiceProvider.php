@@ -20,6 +20,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         view()->share("site_name", "Pétanque Escoublacaise");
-        view()->share("site_annonces", "Annonces");
     }
 }
