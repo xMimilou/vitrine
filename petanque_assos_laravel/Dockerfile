@@ -43,10 +43,6 @@ RUN php artisan key:generate
 # Change permissions of the storage and bootstrap/cache directories
 RUN chmod -R 775 /petanque_assos_laravel/storage /petanque_assos_laravel/bootstrap/cache
 
-# Run additional Laravel specific commands to ensure proper setup
-RUN php artisan config:cache && \
-    php artisan route:cache && \
-    php artisan view:cache
 
 # Command to run the Laravel application
 CMD php artisan serve --host=0.0.0.0 --port=8000
